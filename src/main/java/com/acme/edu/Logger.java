@@ -1,5 +1,7 @@
 package com.acme.edu;
 
+import java.util.Arrays;
+
 public class Logger {
 
     private static final String PRIMITIVE_PREFIX = "primitive: ";
@@ -97,6 +99,20 @@ public class Logger {
             IsChangedString = false;
             SubsequentCounter = 0;
         }
+    }
+
+    public static void log(int [] intArray){
+        System.out.println(("primitives array: "+ Arrays.toString(intArray)).replace('[','{').replace(']','}'));
+    }
+
+    public static void log(int [][] matrix){
+        System.out.println("primitives matrix: {");
+        //System.out.println(("primitives array: "+Arrays.toString()).replace('[','{').replace(']','}'));
+        for ( int [] elem: matrix){
+            System.out.println(Arrays.toString(elem).replace('[','{').replace(']','}'));
+
+        }
+        System.out.println("}");
     }
 
     private static void print(String decoratedMessage) {
